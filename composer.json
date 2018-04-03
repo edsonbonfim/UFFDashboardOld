@@ -1,0 +1,33 @@
+{
+    "name": "bonfim/Bonfim",
+    "description": "The Bonfim PHP Framework",
+    "keywords": ["Bonfim", "framework", "php"],
+    "license": "MIT",
+    "homepage": "https://bonfimsystems.com/framework",
+    "support": {
+        "issues": "https://github.com/BonfimSystems/Bonfim/issues",
+        "source": "https://github.com/BonfimSystems/Bonfim"
+    },
+    "authors": [
+        {
+            "name": "Edson Onildo",
+            "email": "edsononildo@bonfimsystems.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1.0",
+        "bonfim/routing": "dev-master",
+        "bonfim/tpl": "dev-master",
+        "bonfim/database": "dev-master",
+        "bonfim/framework": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}

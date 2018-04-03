@@ -1,0 +1,55 @@
+{extends 'layout/app'}
+
+{block 'content'}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-icon" data-background-color="gray">
+                        <i class="material-icons">school</i>
+                    </div>
+                    <h4 class="card-title">Plano de Estudo</h4>
+                    <p class="category">Este é o seu plano de estudo do período corrente.</p>
+                    <div class="card-content">
+                        <table class="table table-hover table-responsive">
+                            <thead>
+                                <th style="text-align: center;">Turma</th>
+                                <th>Disciplina</th>
+                                <th style="text-align: center;">Seg</th>
+                                <th style="text-align: center;">Ter</th>
+                                <th style="text-align: center;">Qua</th>
+                                <th style="text-align: center;">Qui</th>
+                                <th style="text-align: center;">Sex</th>
+                            </thead>
+                            <tbody>
+                                {foreach uff.plano_de_estudo as plano}
+                                <tr>
+                                    <td style="text-align: center;">{plano.turma}</td>
+                                    <td>
+                                        {if plano.cod == 'RCN00049'}
+                                            Lambda
+                                        {elseif plano.cod == 'RCN00027'}
+                                            Fisica 2
+                                        {elseif plano.cod == 'RCN00028'}
+                                            Fisica Experimental 2
+                                        {else}
+                                            {plano.disc}
+                                        {/if}
+                                    </td>
+                                    <td style="text-align: center;">{if plano.seg != null}{plano.seg}{else}-{/if}</td>
+                                    <td style="text-align: center;">{if plano.ter != null}{plano.ter}{else}-{/if}</td>
+                                    <td style="text-align: center;">{if plano.qua != null}{plano.qua}{else}-{/if}</td>
+                                    <td style="text-align: center;">{if plano.qui != null}{plano.qui}{else}-{/if}</td>
+                                    <td style="text-align: center;">{if plano.sex != null}{plano.sex}{else}-{/if}</td>
+                                {/foreach}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
